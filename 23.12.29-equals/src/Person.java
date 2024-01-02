@@ -1,27 +1,38 @@
 
 public class Person {
-		private String name;
-		private int age;
-		
-		public Person(String name, int age) {
-			super();
-			this.name = name;
-			this.age = age;
-		}
+	private String name;
+	private int age;
 
-		public String getName() {
-			return name;
-		}
+	public Person(String name, int age) {
+		super();
+		this.name = name;
+		this.age = age;
+	}
 
-		public void setName(String name) {
-			this.name = name;
-		}
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Person) {
+			Person target = (Person) obj;
 
-		public int getAge() {
-			return age;
+			return this.name.equals(target.name) && this.age == target.age;
+		} else {
+			return false;
 		}
+	}
 
-		public void setAge(int age) {
-			this.age = age;
-		}
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
 }
